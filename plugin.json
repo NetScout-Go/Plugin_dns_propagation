@@ -1,69 +1,73 @@
 {
-  "id": "dns_propagation",
-  "name": "DNS Propagation Checker",
+  "author": "NetScout-Go",
   "description": "Checks DNS propagation of a domain across multiple DNS servers worldwide",
   "icon": "dns",
+  "id": "dns_propagation",
+  "license": "MIT",
+  "name": "DNS Propagation Checker",
   "parameters": [
     {
+      "default": "example.com",
+      "description": "The domain name to check propagation for",
       "id": "domain",
       "name": "Domain",
-      "description": "The domain name to check propagation for",
-      "type": "string",
       "required": true,
-      "default": "example.com"
+      "type": "string"
     },
     {
+      "default": "A",
+      "description": "The DNS record type to check",
       "id": "record_type",
       "name": "Record Type",
-      "description": "The DNS record type to check",
-      "type": "select",
-      "required": true,
-      "default": "A",
       "options": [
         {
-          "value": "A",
-          "label": "A (IPv4 Address)"
+          "label": "A (IPv4 Address)",
+          "value": "A"
         },
         {
-          "value": "AAAA",
-          "label": "AAAA (IPv6 Address)"
+          "label": "AAAA (IPv6 Address)",
+          "value": "AAAA"
         },
         {
-          "value": "CNAME",
-          "label": "CNAME (Canonical Name)"
+          "label": "CNAME (Canonical Name)",
+          "value": "CNAME"
         },
         {
-          "value": "MX",
-          "label": "MX (Mail Exchange)"
+          "label": "MX (Mail Exchange)",
+          "value": "MX"
         },
         {
-          "value": "TXT",
-          "label": "TXT (Text)"
+          "label": "TXT (Text)",
+          "value": "TXT"
         },
         {
-          "value": "NS",
-          "label": "NS (Name Server)"
+          "label": "NS (Name Server)",
+          "value": "NS"
         }
-      ]
+      ],
+      "required": true,
+      "type": "select"
     },
     {
-      "id": "timeout",
-      "name": "Timeout",
-      "description": "Timeout in seconds for each DNS query",
-      "type": "number",
-      "required": false,
       "default": 5,
-      "min": 1,
+      "description": "Timeout in seconds for each DNS query",
+      "id": "timeout",
       "max": 30,
-      "step": 1
+      "min": 1,
+      "name": "Timeout",
+      "required": false,
+      "step": 1,
+      "type": "number"
     },
     {
+      "default": "",
+      "description": "Comma-separated list of additional DNS servers to check (e.g., '8.8.8.8,1.1.1.1')",
       "id": "custom_dns_servers",
       "name": "Custom DNS Servers",
-      "description": "Comma-separated list of additional DNS servers to check (e.g., '8.8.8.8,1.1.1.1')",
-      "type": "string",
       "required": false,
-      "default": ""
+      "type": "string"
     }
-  ]
+  ],
+  "repository": "https://github.com/NetScout-Go/Plugin_dns_propagation",
+  "version": "1.0.0"
 }
